@@ -1,4 +1,0 @@
-infisical-backend   Up 13 hours   
-NAME                STATUS              CONFIG FILES
-infisical           running(1)          /opt/infisical/docker-compose.yml
-{"date":"2026-05-12T17:33:59.252Z","message":"Ok","emailConfigured":true,"inviteOnlySignup":true,"redisConfigured":true,"secretScanningConfigured":false,"auditLogStorageDisabled":false,"maxIdentityAccessTokenTTL":7776000}

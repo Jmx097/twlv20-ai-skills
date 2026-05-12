@@ -1,3 +1,0 @@
-PASS Infisical directory exists
-FAIL Infisical env missing
-stat: cannot statx '/etc/infisical/.env': Permission denied

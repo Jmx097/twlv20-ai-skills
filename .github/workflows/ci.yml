@@ -1,0 +1,35 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  runtime:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: runtime
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: runtime/package-lock.json
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run build
+      - run: npm test
+
+  schema-smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check required infra files
+        run: |
+          test -s infra/schema.sql
+          test -s infra/tests/rls_isolation.sql
+          grep -q "ENABLE ROW LEVEL SECURITY" infra/schema.sql
+          grep -q "RLS isolation test passed" infra/tests/rls_isolation.sql

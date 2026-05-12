@@ -1,9 +1,0 @@
-public.approvals|t|t
-public.artifacts|t|t
-public.runs|t|t
-public.tenant_secrets_refs|t|t
-public.tenants|f|f
-public|approvals|tenant_isolation_approvals|(tenant_id = app_current_tenant_id())|(tenant_id = app_current_tenant_id())
-public|artifacts|tenant_isolation_artifacts|(tenant_id = app_current_tenant_id())|(tenant_id = app_current_tenant_id())
-public|runs|tenant_isolation_runs|(tenant_id = app_current_tenant_id())|(tenant_id = app_current_tenant_id())
-public|tenant_secrets_refs|tenant_isolation_secret_refs|(tenant_id = app_current_tenant_id())|(tenant_id = app_current_tenant_id())
