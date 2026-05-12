@@ -1,6 +1,6 @@
-export type TenantSlug = 'global' | 'pure-peptide' | 'ajiri' | 'sru' | 'twlv20-internal';
+export type TenantSlug = 'global' | 'pure-peptide' | 'agere-sciences' | 'sru' | 'twlv20-internal';
 
-export const TENANTS: TenantSlug[] = ['global', 'pure-peptide', 'ajiri', 'sru', 'twlv20-internal'];
+export const TENANTS: TenantSlug[] = ['global', 'pure-peptide', 'agere-sciences', 'sru', 'twlv20-internal'];
 
 export function isTenantSlug(value: string): value is TenantSlug {
   return (TENANTS as readonly string[]).includes(value);

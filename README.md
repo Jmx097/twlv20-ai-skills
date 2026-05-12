@@ -13,7 +13,7 @@ Phase 1 scaffold for the Twlv20 AI OS: tenant-aware skills, runtime host, infra 
 ## Current tenants
 
 - `pure-peptide` — Pure Peptide Solutions
-- `ajiri` — Ajiri Sciences
+- `agere-sciences` — AgereSciences
 - `sru` — Sales Recruiting University
 - `twlv20-internal` — Twlv20 Internal
 
