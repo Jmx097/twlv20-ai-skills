@@ -21,3 +21,7 @@ __pycache__/
 
 # Local ClickUp credentials
 .env.clickup
+
+# Node runtime build/dependencies
+runtime/node_modules/
+runtime/dist/
