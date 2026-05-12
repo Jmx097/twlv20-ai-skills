@@ -1,0 +1,404 @@
+{
+  "folder": {
+    "id": "90148921529",
+    "name": "Twlv20 AI OS \u2014 Phase 1",
+    "task_count": "30"
+  },
+  "lists": [
+    {
+      "id": "901415860609",
+      "name": "01 \u2014 Account Provisioning (Plinko)",
+      "content": "All accounts provisioned by Plinko against ai@twlv20.com with Keeper added as admin at creation. Per contract \u00a75 / \u00a78 / \u00a712. Jessie attaches credit cards where needed.",
+      "task_count": 6,
+      "tasks": [
+        {
+          "id": "86b9qbeny",
+          "name": "Droplet Access",
+          "status": "to do",
+          "status_type": "open",
+          "assignees": [],
+          "priority": null,
+          "url": "https://app.clickup.com/t/86b9qbeny",
+          "date_updated": "1777681115550",
+          "description": "windows key + R\n\nssh root@137.184.27.61\npass: Twlv20$$12345\n\nopenclaw dashboard"
+        },
+        {
+          "id": "86b9m4z2c",
+          "name": "Vercel \u2014 landing-page deploy target",
+          "status": "to do",
+          "status_type": "open",
+          "assignees": [],
+          "priority": "normal",
+          "url": "https://app.clickup.com/t/86b9m4z2c",
+          "date_updated": "1777223717487",
+          "description": "Spec. Provision Vercel team account against ai@twlv20.com. Add Keeper as a member. Will host landing pages from the website build chain (per architecture \u00a74 / \u00a75; Phase 1B).\n\nAcceptance criteria.\n\nVercel team account active under ai@twlv20.com.\nTwlv20 credit card attached (Hobby tier may suffice initially).\nKeeper added as member.\nGitHub twlv20-ai-skills org connected for deploy hooks.\n\nReview gate. Keeper confirms he can trigger a deploy from a test branch.\n\nOwner. Jon (Plinko); Jessie attaches card."
+        },
+        {
+          "id": "86b9m4z22",
+          "name": "Whisper / OpenAI API \u2014 voice intake",
+          "status": "to do",
+          "status_type": "open",
+          "assignees": [],
+          "priority": "normal",
+          "url": "https://app.clickup.com/t/86b9m4z22",
+          "date_updated": "1777223713709",
+          "description": "Spec. Provision OpenAI account against ai@twlv20.com (Whisper API for voice\u2192text per architecture \u00a74).\n\nAcceptance criteria.\n\nOpenAI account active under ai@twlv20.com.\nTwlv20 credit card attached.\nAPI key generated; stored as openai.api.key.\nSpending limit set (recommend $50/mo cap to start).\n\nReview gate. Jon transcribes a 10-second test audio file via the API.\n\nOwner. Jon (Plinko); Jessie attaches card."
+        },
+        {
+          "id": "86b9m4z1p",
+          "name": "Twilio \u2014 WhatsApp Business sender",
+          "status": "to do",
+          "status_type": "open",
+          "assignees": [],
+          "priority": "high",
+          "url": "https://app.clickup.com/t/86b9m4z1p",
+          "date_updated": "1777223710317",
+          "description": "Spec. Provision Twilio account against ai@twlv20.com. Configure a WhatsApp Business sender. Webhook will point to the OpenClaw intake endpoint once droplet is up (List 03 \u2192 \"WhatsApp via Twilio\").\n\nAcceptance criteria.\n\nTwilio account active under ai@twlv20.com.\nTwlv20 credit card attached.\nWhatsApp Business sender provisioned + verified.\nAccount SID and Auth Token stored in Infisical (or interim vault) as twilio.sid / twilio.auth_token.\n\nReview gate. Jon sends a test message from the Twilio console once the sender is verified.\n\nOwner. Jon (Plinko); Jessie attaches card."
+        },
+        {
+          "id": "86b9m4z1b",
+          "name": "Codex / paid GPT plan",
+          "status": "complete",
+          "status_type": "closed",
+          "assignees": [],
+          "priority": "normal",
+          "url": "https://app.clickup.com/t/86b9m4z1b",
+          "date_updated": "1777474903977",
+          "description": "Spec. Activate paid GPT plan against ai@twlv20.com for Codex (coding assistant per architecture \u00a74).\n\nAcceptance criteria.\n\nPlan active under ai@twlv20.com.\nTwlv20 credit card attached.\nJon has access for skill authoring.\n\nReview gate. Jon confirms access.\n\nOwner. Jon (Plinko); Jessie attaches card."
+        },
+        {
+          "id": "86b9m4z17",
+          "name": "Claude Max \u2014 team plan, seats wired",
+          "status": "complete",
+          "status_type": "closed",
+          "assignees": [],
+          "priority": "high",
+          "url": "https://app.clickup.com/t/86b9m4z17",
+          "date_updated": "1777474899604",
+          "description": "Spec. Provision Claude Max team plan against ai@twlv20.com. Add Jessie + 1\u20132 core team. Reasoning model used by every agent in the runtime (per architecture \u00a74).\n\nAcceptance criteria.\n\nTeam plan active.\nTwlv20 credit card attached.\nSeats invited: Jessie, Keeper, Jon (admin).\nAPI key generated for runtime use; stored in Infisical (or interim vault) as claude.api.key.\n\nReview gate. Jon runs a smoke-test API call from the droplet using the key.\n\nOwner. Jon (Plinko); Jessie attaches card."
+        },
+        {
+          "id": "86b9m4z0z",
+          "name": "GitHub \u2014 org access + private repo `twlv20-ai-skills`",
+          "status": "to do",
+          "status_type": "open",
+          "assignees": [],
+          "priority": "high",
+          "url": "https://app.clickup.com/t/86b9m4z0z",
+          "date_updated": "1777223699208",
+          "description": "Spec. Either create a GitHub org owned by ai@twlv20.com or use Twlv20's existing org with ai@twlv20.com as a member. Create a private repo twlv20-ai-skills. Add Keeper as admin at creation. This repo is where every Plinko-authored skill lives (per architecture \u00a74).\n\nAcceptance criteria.\n\nPrivate repo twlv20-ai-skills exists under Twlv20's GitHub org.\nKeeper has admin access.\nai@twlv20.com has owner/admin access.\nDefault branch protection rules set (no force-push to main, PR required).\n\nReview gate. Jon clones the repo over SSH using ai@twlv20.com's key. Hand-off to List 02 \u2192 \"GitHub repo scaffold (Keeper)\".\n\nOwner. Jon (Plinko)."
+        },
+        {
+          "id": "86b9m4z0j",
+          "name": "DigitalOcean \u2014 droplet account, Keeper as admin",
+          "status": "to do",
+          "status_type": "open",
+          "assignees": [],
+          "priority": "urgent",
+          "url": "https://app.clickup.com/t/86b9m4z0j",
+          "date_updated": "1777223694074",
+          "description": "Spec. Confirm DigitalOcean account is owned by ai@twlv20.com, Jessie's payment method is attached, Keeper is added as a Team member with admin rights at creation. Provision the 8 vCPU / 16 GB / NVMe droplet ($84/mo plan; expected actual usage $30\u201340/mo). See architecture \u00a74.\n\nAcceptance criteria.\n\nDO account owner = ai@twlv20.com.\nTwlv20 credit card attached.\nKeeper has admin role on the team.\nOne droplet provisioned: 8 vCPU / 16 GB / NVMe, region selected for latency from primary users.\nDroplet IP shared in Infisical (or interim vault) as do.droplet.ip.\n\nReview gate. Jon verifies Keeper's admin role and droplet specs. Hand-off to List 02 \u2192 \"Droplet hardening (Keeper)\".\n\nNote. Existing list \"Account Details\" has a DigitalOcean task with a credential pasted in description \u2014 Jon is handling separately.\n\nOwner. Jon (Plinko); Jessie attaches card."
+        },
+        {
+          "id": "86b9m4z0a",
+          "name": "ai@twlv20.com \u2014 Google Workspace user verified",
+          "status": "complete",
+          "status_type": "closed",
+          "assignees": [],
+          "priority": "urgent",
+          "url": "https://app.clickup.com/t/86b9m4z0a",
+          "date_updated": "1777474885047",
+          "description": "Spec. Confirm ai@twlv20.com exists as a Google Workspace user under Twlv20's domain, with Plinko (Jon) and Keeper both holding access tokens for sign-in to downstream account provisioning. This identity is the canonical owner of every external account spun up in Phase 1.\n\nAcceptance criteria.\n\nai@twlv20.com resolves to a real, working Google Workspace mailbox.\nJon and Keeper can both sign into it (via shared password manager or per-user app passwords).\n2FA is enabled, with backup codes saved to Infisical (post-Infisical-install) or the agreed interim vault.\n\nReview gate. Jon confirms by signing in once and forwarding a test email through it. If 2FA isn't yet enabled, do that before closing.\n\nOwner. Jon (Plinko)."
+        }
+      ]
+    },
+    {
+      "id": "901415860610",
+      "name": "02 \u2014 Infra Build (Keeper)",
+      "content": "The \u00a78 infra task package \u2014 Plinko writes specs + acceptance criteria + review gate, Keeper executes. Same HITL pattern the live system will run on. Burn-down target: end of S2 (Week 1).",
+      "task_count": 7,
+      "tasks": [
+        {
+          "id": "86b9qbguf",
+          "name": "Droplet Access",
+          "status": "to do",
+          "status_type": "open",
+          "assignees": [],
+          "priority": null,
+          "url": "https://app.clickup.com/t/86b9qbguf",
+          "date_updated": "1778010302994",
+          "description": "windows key + R\n\nnew tab in powershell\n\nssh root@162.243.252.92\npass: twlV20$$12345t\n\nopenclaw dashboard\n\nnew powershell tab\n ssh -N -L 18789:127.0.0.1:18788 root@162.243.252.92  \n\nhttp://localhost:18788/chat?session=main \u2190- UI Accessible from here\n-------------------------------------\nai@twlv20.com\nTwlv20$$12345"
+        },
+        {
+          "id": "86b9m4z8h",
+          "name": "GitHub repo scaffold + CI + deploy hook (`twlv20-ai-skills`)",
+          "status": "to do",
+          "status_type": "open",
+          "assignees": [],
+          "priority": "high",
+          "url": "https://app.clickup.com/t/86b9m4z8h",
+          "date_updated": "1777682527959",
+          "description": "Outcome\n\nThe private repo twlv20-ai-skills is scaffolded with the per-tenant skill folder layout, baseline CI on every PR (lint + unit tests against the scaffold), and a deploy workflow that on merge to main SSHes to the droplet, pulls latest, and restarts the runtime via systemd. Branch protection is on. A no-op end-to-end deploy has fired successfully against the live droplet.\n\nRepo layout\n\ntwlv20-ai-skills/\n\u251c\u2500\u2500 .github/\n\u2502   \u2514\u2500\u2500 workflows/\n\u2502       \u251c\u2500\u2500 ci.yml              # lint + test on PR\n\u2502       \u2514\u2500\u2500 deploy.yml          # deploy on merge to main\n\u251c\u2500\u2500 infra/\n\u2502   \u251c\u2500\u2500 schema.sql              # Plinko-authored, Keeper applies (Task 3)\n\u2502   \u251c\u2500\u2500 migrations/             # versioned forward migrations\n\u2502   \u2514\u2500\u2500 tests/\n\u2502       \u2514\u2500\u2500 rls_isolation.sql   # the RLS pairwise test\n\u251c\u2500\u2500 runtime/\n\u2502   \u251c\u2500\u2500 package.json\n\u2502   \u251c\u2500\u2500 src/\n\u2502   \u2502   \u251c\u2500\u2500 index.ts            # OpenClaw entry; agent runtime bootstrap\n\u2502   \u2502   \u251c\u2500\u2500 intake/             # Slack, WhatsApp, voice, Gmail intake\n\u2502   \u2502   \u251c\u2500\u2500 integrations/       # ghl.ts, smartlead.ts, fbads.ts, vercel.ts\n\u2502   \u2502   \u251c\u2500\u2500 runlog/             # Run-Log writer\n\u2502   \u2502   \u2514\u2500\u2500 tests/\n\u2502   \u2514\u2500\u2500 tsconfig.json\n\u251c\u2500\u2500 skills/\n\u2502   \u251c\u2500\u2500 global/\n\u2502   \u2502   \u251c\u2500\u2500 ghl-health-check/\n\u2502   \u2502   "
+        },
+        {
+          "id": "86b9m4z7r",
+          "name": "Weekly encrypted Postgres snapshots \u2192 S3 / Backblaze B2",
+          "status": "to do",
+          "status_type": "open",
+          "assignees": [],
+          "priority": "high",
+          "url": "https://app.clickup.com/t/86b9m4z7r",
+          "date_updated": "1777260846604",
+          "description": "Outcome\n\nEvery Sunday at 03:00 UTC, the droplet runs pg_dump over both twlv20 and infisical databases in custom format, encrypts each dump with GPG (symmetric, AES256), uploads to Backblaze B2 via rclone, retains the 8 most recent weekly snapshots, and emails on failure. A documented restore procedure has been exercised end-to-end on a scratch host.\n\nWhy this shape\n\npg_dump -Fc (custom format) \u2014 compressed by default, supports parallel restore via pg_restore -j, and lets you cherry-pick tables on restore. Plain SQL dumps work but can't parallelize and are 5\u201310\u00d7 larger.\nGPG symmetric (AES256), not asymmetric \u2014 one passphrase to manage, simpler operations. The passphrase lives in Infisical (Phase 1, post-Task-4) under backups.gpg.passphrase AND offline. We are guarding against B2 compromise or B2 lawful-access requests, not against an internal threat model where Infisical itself is compromised.\nBackblaze B2 \u2014 cheaper than S3 for this access pattern, rclone supports it natively, and architecture \u00a78 calls it out explicitly.\nWeekly cadence matches contract \u00a74 (\"weekly snapshots\"). For Phase 2 we add daily logical + WAL archiving for sub-hour RPO, but Phase 1 is weekly.\n\nPre-flight\n\nTask"
+        },
+        {
+          "id": "86b9m4z6q",
+          "name": "Infisical \u2014 self-hosted install + per-tenant scoping",
+          "status": "to do",
+          "status_type": "open",
+          "assignees": [],
+          "priority": "high",
+          "url": "https://app.clickup.com/t/86b9m4z6q",
+          "date_updated": "1777682468224",
+          "description": "Outcome\n\nSelf-hosted Infisical runs on the droplet behind Caddy at infisical.<domain>, with one project per tenant + one global project, machine identities scoped per tenant, and the encryption key backed up offline. Phase 1 secrets that currently live in a password manager (DO password, app DB pw, API keys from List 01) get migrated in. The agent runtime fetches secrets at request time using a tenant-scoped machine identity.\n\nArchitectural notes (so Keeper isn't picking shape blindly)\n\nInfisical needs its own Postgres database and Redis alongside the app. Reusing Twlv20's existing Postgres (Task 2) is acceptable for Phase 1 to avoid a second DB engine \u2014 create a separate infisical database in the same instance with its own owner role. Redis is new; install via apt.\nDeploy via docker-compose using the official docker-compose.prod.yml from the Infisical repo as the starting point. Don't run via docker run directly \u2014 compose manages the dependency graph.\nThe encryption key in .env is the master key for at-rest secret encryption. Losing it = losing every secret. It does NOT live in Infisical itself (chicken-and-egg). It lives in /etc/infisical/.env (root-only readable on the droplet) "
+        },
+        {
+          "id": "86b9m4z5v",
+          "name": "Tenant schema + RLS migration (per Plinko spec)",
+          "status": "to do",
+          "status_type": "open",
+          "assignees": [],
+          "priority": "urgent",
+          "url": "https://app.clickup.com/t/86b9m4z5v",
+          "date_updated": "1777224408113",
+          "description": "Outcome\n\nPlinko's infra/schema.sql migration is applied to the twlv20 database. Every tenant-scoped table carries tenant_id, has RLS enabled, has policies that key reads/writes on current_setting('app.tenant_id'), and FORCE ROW LEVEL SECURITY is set so the table owner is also subject to policies. Four tenant rows exist. An RLS isolation test passes for all four tenants.\n\nHow RLS will be used (so Keeper isn't guessing)\n\nThe agent runtime (twlv20_app role, NOBYPASSRLS) opens a Postgres connection per request and immediately runs SELECT set_config('app.tenant_id', '<tenant-uuid>', false); before any query. Every policy on every tenant-scoped table compares tenant_id::text to that GUC. If the runtime forgets to set the GUC, queries return zero rows (the GUC defaults to empty, no row matches) \u2014 fail-closed, not fail-open. Plinko owns the runtime side of this contract; Keeper's job is to make sure the SQL side is bulletproof.\n\nPre-flight\n\nTask 2 (Postgres + pgvector) shipped.\nPlinko has dropped infra/schema.sql into the twlv20-ai-skills repo (or attached to this ClickUp task as a file). If absent at the time Keeper picks this up, comment on the task and block until Plinko delivers.\n\nTabl"
+        },
+        {
+          "id": "86b9m4z55",
+          "name": "Postgres 16 + pgvector install",
+          "status": "to do",
+          "status_type": "open",
+          "assignees": [],
+          "priority": "urgent",
+          "url": "https://app.clickup.com/t/86b9m4z55",
+          "date_updated": "1777260813591",
+          "description": "Outcome\n\nPostgreSQL 16 with pgvector running on the hardened droplet, listening on the Unix socket and 127.0.0.1 only, with a non-superuser application role and tuning matched to 16 GB RAM. This is the data spine the Run-Log, tenant schema, and Infisical all sit on.\n\nPre-flight\n\nTask 1 (Droplet hardening) shipped.\nDNS not relevant \u2014 Postgres never speaks publicly.\n\nStep-by-step\n\n1. Add the PGDG official apt repo (deb822 format)\n\nUbuntu 24.04 ships an older Postgres in its default archive. Use the PostgreSQL Global Development Group repo for current 16.x patches.\n\nsudo apt -y install curl ca-certificates\nsudo install -d /usr/share/postgresql-common/pgdg\nsudo curl -o /usr/share/postgresql-common/pgdg/apt.postgresql.org.asc \\\n  --fail https://www.postgresql.org/media/keys/ACCC4CF8.asc\n\nsudo tee /etc/apt/sources.list.d/pgdg.sources <<'EOF'\nTypes: deb\nURIs: https://apt.postgresql.org/pub/repos/apt\nSuites: noble-pgdg\nArchitectures: amd64\nComponents: main\nSigned-By: /usr/share/postgresql-common/pgdg/apt.postgresql.org.asc\nEOF\n\nsudo apt update\n\n2. Install Postgres 16 + pgvector\n\nsudo apt -y install postgresql-16 postgresql-client-16 postgresql-16-pgvector\npsql -V          # confirm 16.x\nls"
+        },
+        {
+          "id": "86b9m4z4w",
+          "name": "Droplet hardening \u2014 Caddy/TLS, SSH-key-only, fail2ban",
+          "status": "to do",
+          "status_type": "open",
+          "assignees": [],
+          "priority": "urgent",
+          "url": "https://app.clickup.com/t/86b9m4z4w",
+          "date_updated": "1777260062620",
+          "description": "Outcome\n\nA DigitalOcean droplet (Ubuntu 24.04 LTS, 8 vCPU / 16 GB / NVMe) running Caddy as the public-facing reverse proxy with automatic TLS, with SSH locked to keys-only, root login disabled, fail2ban watching SSH + Caddy logs, and UFW configured. This is the substrate every other List 02 task installs onto.\n\nPre-flight\n\nDigitalOcean account exists, Keeper is admin (List 01 \u2192 \"DigitalOcean \u2014 droplet account\").\nDroplet provisioned: Ubuntu 24.04 LTS, 8 vCPU / 16 GB / NVMe, region chosen for latency.\nDNS for the chosen hostname pointed at the droplet IP. Suggested subdomains: paperclip.<domain>, claw.<domain>, infisical.<domain> \u2014 all pointing at the same droplet, Caddy routes by Host header.\nLocal SSH keypair generated for keeper and jon (Ed25519: ssh-keygen -t ed25519 -C keeper@twlv20).\n\nStep-by-step\n\n1. First-login hygiene\n\nssh root@<droplet-ip>\napt update && apt -y full-upgrade && apt -y autoremove\napt -y install ufw fail2ban curl ca-certificates debian-keyring debian-archive-keyring apt-transport-https unattended-upgrades\ndpkg-reconfigure -plow unattended-upgrades   # enable auto security updates\nhostnamectl set-hostname twlv20-prod\ntimedatectl set-timezone UTC\n\n2. Create non-r"
+        }
+      ]
+    },
+    {
+      "id": "901415860612",
+      "name": "03 \u2014 Channels & Foundation (Plinko)",
+      "content": "Paperclip + OpenClaw install, Slack/WhatsApp/voice/Gmail intake, four-tenant stubs, Run-Log emission, integrations. Owned by Plinko. Goal: end-to-end channel test by end of S2.",
+      "task_count": 13,
+      "tasks": [
+        {
+          "id": "86b9m4ze5",
+          "name": "End-to-end channel test \u2014 Slack, WhatsApp, voice, Gmail all return drafts",
+          "status": "to do",
+          "status_type": "open",
+          "assignees": [],
+          "priority": "urgent",
+          "url": "https://app.clickup.com/t/86b9m4ze5",
+          "date_updated": "1777223857374",
+          "description": "Spec. S2 demoable checkpoint (per sop.md \u00a74 S2). Submit the same prompt from each channel; each produces a draft response within 60s; each row in runs is correctly attributed to its channel and tenant.\n\nAcceptance criteria.\n\nSlack /ai-task test passes.\nSlack DM test passes.\nWhatsApp inbound test passes.\nVoice intake test passes.\nGmail intake test passes.\nAll five runs rows visible in Paperclip with the correct trigger_source.\n\nReview gate. S2 demo with Jessie. This is the sprint checkpoint \u2014 if any channel fails, S2 is incomplete.\n\nOwner. Jon (Plinko).\n\nDepends on. All channel integrations + Run-Log + OpenClaw."
+        },
+        {
+          "id": "86b9m4zdr",
+          "name": "Run-Log \u2014 schema deployed, emission verified across every channel",
+          "status": "to do",
+          "status_type": "open",
+          "assignees": [],
+          "priority": "urgent",
+          "url": "https://app.clickup.com/t/86b9m4zdr",
+          "date_updated": "1777223852239",
+          "description": "Spec. Confirm the runs table (deployed in List 02) is being written by every agent path. Schema fields: run_id, tenant_id, workflow, agent, timestamp, trigger_source, input_hash, confidence_score, HIL_status, outcome, token_cost, api_cost, duration_ms, artifact_refs, error_payload. Build a \"Run-Log self-test\" that triggers a run from each channel and asserts a row appears.\n\nAcceptance criteria.\n\nruns row written for every agent invocation (no path bypasses it).\ntoken_cost and api_cost populated for paid model + API calls.\ntenant_id correctly attributes to the originating tenant.\nSelf-test script in runtime/tests/run-log.spec.ts passes against dev DB.\n\nReview gate. Jon runs the self-test; Jessie sees per-tenant cost lines in Paperclip.\n\nOwner. Jon (Plinko).\n\nDepends on. Tenant schema migration, OpenClaw install, every channel integration."
+        },
+        {
+          "id": "86b9m4zd3",
+          "name": "Vercel deploy integration \u2014 site publish path",
+          "status": "to do",
+          "status_type": "open",
+          "assignees": [],
+          "priority": "normal",
+          "url": "https://app.clickup.com/t/86b9m4zd3",
+          "date_updated": "1777223845548",
+          "description": "Spec. Wire Vercel API for the website build chain (List 04). Adapter exposes: create project from a GitHub repo branch, trigger deploy, read deploy status. Auth token in Infisical under the tenant who owns the site.\n\nAcceptance criteria.\n\nVercel token in Infisical.\nAdapter can create + deploy a test project from a branch and report URL.\nFailed deploys surface in Paperclip + Slack.\n\nReview gate. Keeper deploys a test landing page end-to-end via the adapter; Jon verifies.\n\nOwner. Jon (Plinko).\n\nDepends on. OpenClaw install, Vercel account (List 01).\n\nBlocks. Website build chain (List 04)."
+        },
+        {
+          "id": "86b9m4zcr",
+          "name": "Facebook Ads \u2014 read-only integration (SRU)",
+          "status": "to do",
+          "status_type": "open",
+          "assignees": [],
+          "priority": "high",
+          "url": "https://app.clickup.com/t/86b9m4zcr",
+          "date_updated": "1777223841598",
+          "description": "Spec. Wire FB Marketing API in read-only mode. No write paths exist in Phase 1 (per contract \u00a78 + risk \u00a75.1 in path.md \u2014 account-shutdown risk). Adapter exposes: list campaigns, list ad sets, read insights for a date range. Token in Infisical under SRU's tenant project.\n\nAcceptance criteria.\n\nFB long-lived token in Infisical.\nToken refresh job runs weekly; logs to Run-Log.\nAdapter unit tests cover insights pulls.\nNo write methods exposed (compile-time guarantee or unit test asserting absence).\n\nReview gate. Jon pulls SRU's last 7 days of insights via the adapter; Jessie spot-checks the numbers.\n\nOwner. Jon (Plinko).\n\nDepends on. OpenClaw install, tenant stubs (SRU).\n\nBlocks. Weekly FB Ads report workflow (List 04)."
+        },
+        {
+          "id": "86b9m4zc5",
+          "name": "Smart Lead integration \u2014 review/cleanup only (Phase 1 scope)",
+          "status": "to do",
+          "status_type": "open",
+          "assignees": [],
+          "priority": "normal",
+          "url": "https://app.clickup.com/t/86b9m4zc5",
+          "date_updated": "1777223835675",
+          "description": "Spec. Wire Smart Lead API in read + suggest mode. Phase 1 scope is review/cleanup, not running campaigns (per contract \u00a78 / \u00a710). Adapter exposes: list campaigns, list sequences, read sequence stats, post a suggestion to ClickUp.\n\nAcceptance criteria.\n\nSmart Lead API key in Infisical (global scope \u2014 Smart Lead is shared across tenants).\nAdapter unit tests cover the read paths.\nWrite/send paths intentionally not implemented in Phase 1 \u2014 explicit comment in code citing \u00a710.\n\nReview gate. Jon runs an audit against an existing Smart Lead campaign; results post to ClickUp.\n\nOwner. Jon (Plinko).\n\nDepends on. OpenClaw install, Infisical install."
+        },
+        {
+          "id": "86b9m4zbh",
+          "name": "GHL integration \u2014 read + write (per tenant)",
+          "status": "to do",
+          "status_type": "open",
+          "assignees": [],
+          "priority": "high",
+          "url": "https://app.clickup.com/t/86b9m4zbh",
+          "date_updated": "1777223830689",
+          "description": "Spec. Wire GoHighLevel API into OpenClaw with read+write for each client tenant. API keys per location stored in Infisical under the tenant's project. Build a thin adapter in runtime/integrations/ghl.ts exposing the verbs the Phase 1 workflows need: pipeline read, contact create/update, opportunity move, workflow status read.\n\nAcceptance criteria.\n\nPer-tenant GHL API key in Infisical.\nAdapter unit tests pass against a sandbox / dev account.\nOpenClaw can list pipeline stages for Pure Peptide, AgereSciences, and SRU on demand.\nWrite paths gated by HITL \u2014 agent never writes without approval row passing.\n\nReview gate. Jon runs a live read against each tenant's GHL; Jessie approves a sandbox write.\n\nOwner. Jon (Plinko).\n\nDepends on. OpenClaw install, tenant stubs, Infisical install.\n\nBlocks. GHL health-check workflow (List 04)."
+        },
+        {
+          "id": "86b9m4zba",
+          "name": "Stub four tenants in DB \u2014 Pure Peptide, AgereSciences, SRU, Twlv20 Internal",
+          "status": "to do",
+          "status_type": "open",
+          "assignees": [],
+          "priority": "high",
+          "url": "https://app.clickup.com/t/86b9m4zba",
+          "date_updated": "1777223823919",
+          "description": "Spec. Insert one row per tenant in tenants. Per architecture \u00a76 each tenant carries its own users, credentials (Infisical project IDs), skills, KB, agents, runs, approvals, artifacts. Stub each with the minimum: tenant UUID, display name, Infisical project ID, Slack channel ID for tenant-scoped notifications.\n\nAcceptance criteria.\n\n4 rows in tenants.\nEach tenant has a corresponding Infisical project (List 02 task).\nEach tenant has a Slack channel (e.g. #tenant-pure-peptide) for tenant-scoped run notifications.\nRLS isolation test re-run and passes against the real tenant UUIDs.\n\nReview gate. Jon runs the RLS test from Postgres install task one more time against the live tenant rows.\n\nOwner. Jon (Plinko).\n\nDepends on. Tenant schema + RLS migration, Infisical install."
+        },
+        {
+          "id": "86b9m4zap",
+          "name": "Gmail intake \u2014 ai@twlv20.com \u2192 OpenClaw",
+          "status": "to do",
+          "status_type": "open",
+          "assignees": [],
+          "priority": "high",
+          "url": "https://app.clickup.com/t/86b9m4zap",
+          "date_updated": "1777223817882",
+          "description": "Spec. Use Gmail's IMAP IDLE or push notifications to route inbound emails to ai@twlv20.com into OpenClaw intake. Sender allow-list initially: Jessie + 1\u20132 core team. Replies post back from ai@twlv20.com.\n\nAcceptance criteria.\n\nInbound email \u2192 run row with trigger_source = 'gmail' within 60s.\nReply email goes back to the sender from ai@twlv20.com.\nUnknown senders are queued for review (not silently dropped) and surface in Paperclip's approval queue.\n\nReview gate. Jessie emails the address and gets a draft back.\n\nOwner. Jon (Plinko).\n\nDepends on. OpenClaw install, ai@twlv20.com setup (List 01)."
+        },
+        {
+          "id": "86b9m4z9v",
+          "name": "Voice intake \u2014 Whisper \u2192 text \u2192 agent",
+          "status": "to do",
+          "status_type": "open",
+          "assignees": [],
+          "priority": "high",
+          "url": "https://app.clickup.com/t/86b9m4z9v",
+          "date_updated": "1777223813993",
+          "description": "Spec. Provide a voice-intake endpoint: a Twilio voice number (or a recorder web app) that captures audio, hits OpenAI Whisper for transcription, and pipes the resulting text into OpenClaw intake.\n\nAcceptance criteria.\n\nRecording \u2192 transcription \u2192 run row with trigger_source = 'voice'.\nRun-Log includes api_cost for the Whisper call.\nFailed transcription returns an error event (not silence) and surfaces in Paperclip.\n\nReview gate. Jessie calls the line / records a clip; the resulting draft appears in Slack within 60s.\n\nOwner. Jon (Plinko).\n\nDepends on. OpenClaw install, OpenAI account (List 01)."
+        },
+        {
+          "id": "86b9m4z9q",
+          "name": "WhatsApp \u2014 Twilio inbound webhook \u2192 OpenClaw",
+          "status": "to do",
+          "status_type": "open",
+          "assignees": [],
+          "priority": "high",
+          "url": "https://app.clickup.com/t/86b9m4z9q",
+          "date_updated": "1777223808509",
+          "description": "Spec. Configure the Twilio WhatsApp sender (provisioned in List 01) to POST inbound messages to https://claw.<twlv20-domain>/intake/whatsapp. OpenClaw maps the sender phone to a Twlv20 user, creates a run, replies via Twilio API.\n\nAcceptance criteria.\n\nInbound WhatsApp message \u2192 run row with trigger_source = 'whatsapp'.\nOpenClaw reply lands in WhatsApp within 30s.\nUnknown sender numbers return a polite \"this number isn't authorized\" reply, not silence.\n\nReview gate. Jessie sends a real WhatsApp message and gets a draft response back.\n\nOwner. Jon (Plinko).\n\nDepends on. OpenClaw install, Twilio account (List 01)."
+        },
+        {
+          "id": "86b9m4z9c",
+          "name": "Slack \u2014 bot, /ai-task, DM intake, approval buttons, kill-switch",
+          "status": "in progress",
+          "status_type": "custom",
+          "assignees": [],
+          "priority": "urgent",
+          "url": "https://app.clickup.com/t/86b9m4z9c",
+          "date_updated": "1777260872524",
+          "description": "Spec. Create Slack app under Twlv20's workspace. Bot scopes: chat:write, commands, im:history, im:write, users:read. Slash command /ai-task POSTs to OpenClaw intake. DM-the-bot routes to intake too. Approval messages render with two buttons (Approve / Reject); response posts back into the originating thread. Kill-switch command /ai-kill <run_id> halts a workflow.\n\nAcceptance criteria.\n\n/ai-task from Slack creates a Run-Log row with trigger_source = 'slack:slash'.\nDM intake creates a row with trigger_source = 'slack:dm'.\nApproval button click flips runs.HIL_status from pending \u2192 approved/rejected and triggers the next step.\n/ai-kill <run_id> sets HIL_status = 'killed' and halts orchestration.\nAll four channel types are visible in Paperclip's filter.\n\nReview gate. Jon walks through every command from Jessie's Slack account; Jessie watches a Loom of the same.\n\nOwner. Jon (Plinko).\n\nDepends on. OpenClaw install."
+        },
+        {
+          "id": "86b9m4z97",
+          "name": "Install OpenClaw on droplet",
+          "status": "in progress",
+          "status_type": "custom",
+          "assignees": [],
+          "priority": "high",
+          "url": "https://app.clickup.com/t/86b9m4z97",
+          "date_updated": "1777260869370",
+          "description": "Spec. Self-host OpenClaw (MIT) on the droplet as the primary command surface. Configure to talk to local Postgres for runs and to Infisical for secrets. Behind Caddy at claw.<twlv20-domain>.\n\nAcceptance criteria.\n\nOpenClaw service running under systemd; restarts on failure.\nReads tenant + skill config from Postgres.\nReads secrets from Infisical at runtime; never from environment-baked vars.\nOne stub skill (\"hello-world\") executes end-to-end and emits a runs row.\n\nReview gate. Jon triggers the hello-world skill from each connected channel (Slack, WhatsApp, voice, Gmail) and sees one Run-Log row per trigger.\n\nOwner. Jon (Plinko).\n\nDepends on. Paperclip install, Infisical install."
+        },
+        {
+          "id": "86b9m4z92",
+          "name": "Install Paperclip on droplet",
+          "status": "to do",
+          "status_type": "open",
+          "assignees": [],
+          "priority": "high",
+          "url": "https://app.clickup.com/t/86b9m4z92",
+          "date_updated": "1777223791587",
+          "description": "Spec. Clone Paperclip.ing (Node.js + React, MIT) onto the droplet. Configure to use the local Postgres + pgvector. Deploy behind Caddy at paperclip.<twlv20-domain>. Wire to the Run-Log table for visibility. Reference: architecture \u00a74.\n\nAcceptance criteria.\n\nPaperclip UI loads at paperclip.<twlv20-domain> over HTTPS.\nLogin uses ai@twlv20.com SSO or local accounts (decide per Paperclip config).\nPaperclip reads from the runs table; an inserted Run-Log row appears in the dashboard within 5s.\nTenant filter selector works against the four stubbed tenants.\n\nReview gate. Jessie logs in, sees an empty dashboard, can switch tenants. Jon inserts a synthetic runs row; it appears.\n\nOwner. Jon (Plinko).\n\nDepends on. Droplet hardening, Postgres + RLS migration."
+        }
+      ]
+    },
+    {
+      "id": "901415860613",
+      "name": "04 \u2014 Revenue Workflows (Plinko + HITL)",
+      "content": "The four Phase 1 workflows: GHL health-check, weekly FB Ads report (SRU), website build chain, ClickUp infrastructure pass. Each has a skill folder, approval gate (Slack + Paperclip), kill-switch, and Run-Log emission. Demos in S3\u2013S4.",
+      "task_count": 4,
+      "tasks": [
+        {
+          "id": "86b9m4zha",
+          "name": "Workflow 4 \u2014 ClickUp infrastructure pass (cleanup + per-client SOP.md + intake template)",
+          "status": "to do",
+          "status_type": "open",
+          "assignees": [],
+          "priority": "urgent",
+          "url": "https://app.clickup.com/t/86b9m4zha",
+          "date_updated": "1777223898448",
+          "description": "Spec. Per contract \u00a78 / \u00a79 / path.md \u00a75.2. The first agent run on the live system. Cleans up Jessie's existing ClickUp (stale work, archive obvious dead tasks, normalize statuses). Establishes a __SOP.md__ doc per client (Pure Peptide, AgereSciences, SRU, Twlv20 Internal) defining how work moves through the system. Defines a project intake template every new build will use.\n\nAcceptance criteria.\n\nSkill committed under skills/global/clickup-infra-pass/.\nExisting ClickUp audited; agent posts a \"dead task\" list for Jessie to bulk-archive (no auto-archive without approval).\nPer-client __SOP.md__ shipped to ClickUp Doc per tenant, covering: how a request comes in, how the agent triages it, named human gates, where it ends up.\nProject intake template pinned to each tenant's space.\nHITL gates: every change to existing tasks routes through Jessie's approval queue.\nRun-Log emits.\n\nReview gate. S4 demo. Jessie reviews the cleanup proposals, signs off on the SOPs, accepts the intake template.\n\nOwner. Jon (Plinko); Jessie approves.\n\nDepends on. ClickUp integration (already live \u2014 this very ClickUp), OpenClaw, Run-Log, Slack approvals."
+        },
+        {
+          "id": "86b9m4zgp",
+          "name": "Workflow 3 \u2014 Website build chain (AI \u2192 Faguni \u2192 Keeper \u2192 Jessie)",
+          "status": "to do",
+          "status_type": "open",
+          "assignees": [],
+          "priority": "urgent",
+          "url": "https://app.clickup.com/t/86b9m4zgp",
+          "date_updated": "1777223889197",
+          "description": "Spec. Per contract \u00a77 / \u00a78 / sop.md \u00a74 S4. The HITL chain end-to-end on at least one site (real-estate site or 1220.com rebuild). Stages: AI drafts content \u2192 Jessie or client review \u2192 AI generates design \u2192 Faguni reviews \u2192 AI builds HTML/CSS or hands spec \u2192 Keeper builds/QAs \u2192 Jessie approves \u2192 GHL pipeline wired by Keeper \u2192 site goes live via Vercel.\n\nAcceptance criteria.\n\nSkill committed under skills/global/site-build-chain/ with stage-by-stage gating logic.\nEach handoff creates a ClickUp task with full artifact context.\nFaguni's review produces a markup/comments artifact in Paperclip.\nKeeper's build produces a deployable repo branch.\nGHL workflow tied to the form submissions on the live site (Keeper QAs the connection per \u00a77).\nOne site shipped end-to-end during S4.\nRun-Log emits at each stage; cost attributable per stage.\n\nReview gate. S4 demo. Jessie watches the chain run; site goes live with him approving the final stage.\n\nOwner. Jon (Plinko) orchestrates; Faguni reviews design; Keeper builds; Jessie approves.\n\nDepends on. Vercel integration, GHL integration, every channel + Run-Log piece."
+        },
+        {
+          "id": "86b9m4zg1",
+          "name": "Workflow 2 \u2014 Weekly Facebook Ads report (SRU, Mondays)",
+          "status": "to do",
+          "status_type": "open",
+          "assignees": [],
+          "priority": "urgent",
+          "url": "https://app.clickup.com/t/86b9m4zg1",
+          "date_updated": "1777223880406",
+          "description": "Spec. Per contract \u00a78 / sop.md \u00a74 S3. Every Monday 09:00 (Twlv20-tz), agent pulls SRU's prior-week FB Ads insights via the read-only adapter, fills a templated report, posts to Slack + emails Jessie. Recommendations included. Nothing is pushed to FB.\n\nAcceptance criteria.\n\nSkill committed under skills/sru/fb-weekly-report/.\nCron / Paperclip schedule fires Monday 09:00 SRU's tz.\nReport template covers: spend, impressions, clicks, conv rate, CPL, top 3 ad sets, anomalies, recommendations.\nOutput rendered as a Paperclip artifact + Slack message + email PDF.\nRun-Log emits with the API costs included.\nFirst Monday delivery happens during S3.\n\nReview gate. S3 demo with Jessie; first live Monday delivery is the acceptance event.\n\nOwner. Jon (Plinko); Jessie reviews format and approves.\n\nDepends on. FB Ads read-only integration, Run-Log, OpenClaw scheduling."
+        },
+        {
+          "id": "86b9m4zfc",
+          "name": "Workflow 1 \u2014 GHL health-check + cleanup (Pure Peptide, AgereSciences, SRU)",
+          "status": "to do",
+          "status_type": "open",
+          "assignees": [],
+          "priority": "urgent",
+          "url": "https://app.clickup.com/t/86b9m4zfc",
+          "date_updated": "1777223873481",
+          "description": "Spec. Per contract \u00a78 / sop.md \u00a74 S3. Skill folder skills/global/ghl-health-check/. Agent reads the tenant's GHL pipeline, contacts, workflows, opportunities, calendars; produces a health-score report; queues fixes as ClickUp tasks (some routed to agents for auto-fix-with-approval, some to Keeper).\n\nAcceptance criteria.\n\nSkill committed under skills/global/ghl-health-check/ with: skill.yaml, prompt.md, tests/.\nApproval gate in Slack + Paperclip \u2014 agent never writes to GHL without an approved row.\nKill-switch: /ai-kill <run_id> halts mid-audit.\nRun-Log emits per audit with tenant_id, token_cost, api_cost.\nHealth-score schema documented (categories, weights, thresholds).\nFirst three runs against Pure Peptide, AgereSciences, SRU produce useful, reviewed reports \u2014 Jessie signs off on at least one.\nEach \"fix\" produces a ClickUp task with full context (links, artifacts, what was done, what's needed).\n\nReview gate. S3 demo. Jessie picks one tenant, runs the audit live, reviews the report, approves a sample fix.\n\nOwner. Jon (Plinko); Jessie reviews; Keeper executes any infra-side fixes.\n\nDepends on. GHL integration, OpenClaw, Run-Log, Slack approvals."
+        }
+      ]
+    }
+  ]
+}

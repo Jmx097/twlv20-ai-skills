@@ -1,0 +1,11 @@
+[Unit]
+Description=Run Twlv20 Postgres backup weekly
+
+[Timer]
+OnCalendar=Sun *-*-* 02:00:00 UTC
+Persistent=true
+RandomizedDelaySec=0
+Unit=twlv20-postgres-backup.service
+
+[Install]
+WantedBy=timers.target

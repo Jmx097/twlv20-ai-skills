@@ -1,0 +1,31 @@
+=== all memberships summarized ===
+    scope     |             actor             |    org    |        project         |  roles   
+--------------+-------------------------------+-----------+------------------------+----------
+ organization | a***@twlv20.com               | Admin Org |                        | {admin}
+ project      | a***@twlv20.com               | Admin Org | AgereSciences          | {admin}
+ project      | a***@twlv20.com               | Admin Org | Global                 | {admin}
+ project      | a***@twlv20.com               | Admin Org | Pure Peptide Solutions | {admin}
+ project      | a***@twlv20.com               | Admin Org | SRU                    | {admin}
+ project      | a***@twlv20.com               | Admin Org | Twlv20 Internal        | {admin}
+ organization | twlv20-agere-sciences-runtime | Admin Org |                        | {member}
+ organization | twlv20-agere-sciences-runtime | Admin Org |                        | {member}
+ project      | twlv20-agere-sciences-runtime | Admin Org | AgereSciences          | {member}
+ project      | twlv20-agere-sciences-runtime | Admin Org | AgereSciences          | {member}
+ organization | twlv20-global-runtime         | Admin Org |                        | {member}
+ organization | twlv20-global-runtime         | Admin Org |                        | {member}
+ project      | twlv20-global-runtime         | Admin Org | Global                 | {member}
+ project      | twlv20-global-runtime         | Admin Org | Global                 | {member}
+ organization | twlv20-internal-runtime       | Admin Org |                        | {member}
+ organization | twlv20-internal-runtime       | Admin Org |                        | {member}
+ project      | twlv20-internal-runtime       | Admin Org | Twlv20 Internal        | {member}
+ project      | twlv20-internal-runtime       | Admin Org | Twlv20 Internal        | {member}
+ organization | twlv20-pure-peptide-runtime   | Admin Org |                        | {member}
+ organization | twlv20-pure-peptide-runtime   | Admin Org |                        | {member}
+ project      | twlv20-pure-peptide-runtime   | Admin Org | Pure Peptide Solutions | {member}
+ project      | twlv20-pure-peptide-runtime   | Admin Org | Pure Peptide Solutions | {member}
+ organization | twlv20-sru-runtime            | Admin Org |                        | {member}
+ organization | twlv20-sru-runtime            | Admin Org |                        | {member}
+ project      | twlv20-sru-runtime            | Admin Org | SRU                    | {member}
+ project      | twlv20-sru-runtime            | Admin Org | SRU                    | {member}
+(26 rows)
+

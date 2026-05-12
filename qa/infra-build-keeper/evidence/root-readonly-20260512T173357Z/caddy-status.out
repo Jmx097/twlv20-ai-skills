@@ -1,0 +1,38 @@
+active
+v2.11.2 h1:iOlpsSiSKqEW+SIXrcZsZ/NO74SzB/ycqqvAIEfIm64=
+Valid configuration
+{
+	email ai@twlv20.com
+}
+
+infisical.twlv20.com {
+	log {
+		output file /var/log/caddy/access.log
+		format json
+	}
+	reverse_proxy 127.0.0.1:8080
+}
+
+claw.twlv20.com {
+	log {
+		output file /var/log/caddy/access.log
+		format json
+	}
+	reverse_proxy 127.0.0.1:18788
+}
+
+paperclip.twlv20.com {
+	log {
+		output file /var/log/caddy/access.log
+		format json
+	}
+	respond "paperclip route reserved; upstream pending" 200
+}
+
+:80 {
+	log {
+		output file /var/log/caddy/access.log
+		format json
+	}
+	respond "twlv20-prod Caddy online" 200
+}

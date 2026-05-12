@@ -1,0 +1,21 @@
+-rw-r--r-- 1 root root 3485 May  5 19:30 /etc/ssh/sshd_config
+
+/etc/ssh/sshd_config.d:
+total 20
+drwxr-xr-x 2 root root 4096 May 12 06:35 .
+drwxr-xr-x 4 root root 4096 May 12 00:14 ..
+-rw------- 1 root root   27 May 12 06:35 50-cloud-init.conf
+-rw-r--r-- 1 root root   27 May 12 06:35 60-cloudimg-settings.conf
+-rw-r--r-- 1 root root  305 May 12 04:39 99-twlv20-hardening.conf
+/etc/ssh/sshd_config:42:PermitRootLogin yes
+/etc/ssh/sshd_config:71:KbdInteractiveAuthentication no
+/etc/ssh/sshd_config.d/50-cloud-init.conf:1:PasswordAuthentication yes
+/etc/ssh/sshd_config.d/99-twlv20-hardening.conf:1:PermitRootLogin yes
+/etc/ssh/sshd_config.d/99-twlv20-hardening.conf:2:PasswordAuthentication yes
+/etc/ssh/sshd_config.d/99-twlv20-hardening.conf:3:ChallengeResponseAuthentication no
+/etc/ssh/sshd_config.d/99-twlv20-hardening.conf:4:KbdInteractiveAuthentication no
+/etc/ssh/sshd_config.d/99-twlv20-hardening.conf:6:PubkeyAuthentication yes
+/etc/ssh/sshd_config.d/99-twlv20-hardening.conf:8:MaxAuthTries 3
+/etc/ssh/sshd_config.d/99-twlv20-hardening.conf:9:LoginGraceTime 20
+/etc/ssh/sshd_config.d/99-twlv20-hardening.conf:12:AllowUsers keeper jon twlv20-deploy root
+/etc/ssh/sshd_config.d/60-cloudimg-settings.conf:1:PasswordAuthentication yes

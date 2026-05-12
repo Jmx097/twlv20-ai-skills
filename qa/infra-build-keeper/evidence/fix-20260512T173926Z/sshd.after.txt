@@ -1,0 +1,9 @@
+logingracetime 20
+maxauthtries 3
+permitrootlogin no
+pubkeyauthentication yes
+passwordauthentication no
+kbdinteractiveauthentication no
+allowusers keeper
+allowusers jon
+allowusers twlv20-deploy

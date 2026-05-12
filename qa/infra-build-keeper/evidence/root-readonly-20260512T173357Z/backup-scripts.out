@@ -1,0 +1,118 @@
+===== /usr/local/sbin/twlv20-postgres-backup =====
+-rwx------ 1 root root 975 May 11 23:36 /usr/local/sbin/twlv20-postgres-backup
+#!/usr/bin/env bash
+set -euo pipefail
+umask 077
+set -a
+source /root/.secrets/b2-backup.env
+set +a
+STAMP="$(date -u +%Y-%m-%d-%H%MUTC)"
+DAY="$(date -u +%Y-%m-%d)"
+WORK="$(mktemp -d /var/backups/twlv20-postgres/run.XXXXXX)"
+trap 'rm -rf "$WORK"' EXIT
+BASE="weekly-postgres-${STAMP}.sql"
+PLAIN="$WORK/$BASE"
+GZ="$PLAIN.gz"
+ENC="$GZ.gpg"
+OBJ="${B2_OBJECT_PREFIX}/${DAY}/${BASE}.gz.gpg"
+LOG=/var/log/twlv20/postgres-backup.log
+{
+  echo "[$(date -u --iso-8601=seconds)] starting backup $OBJ"
+  sudo -u postgres pg_dump --format=plain --no-owner --no-privileges --dbname=twlv20 > "$PLAIN"
+  gzip -9 "$PLAIN"
+  gpg --batch --yes --symmetric --cipher-algo AES256 --pinentry-mode loopback --passphrase-file /root/.secrets/pg-backup-gpg.pass --output "$ENC" "$GZ"
+  /usr/local/sbin/twlv20-pg-b2.py upload "$ENC" "$OBJ"
+  /usr/local/sbin/twlv20-pg-b2.py retention "$B2_OBJECT_PREFIX/" "$B2_RETENTION_COUNT"
+  echo "[$(date -u --iso-8601=seconds)] backup complete $OBJ"
+} | tee -a "$LOG"
+===== /usr/local/sbin/twlv20-pg-b2.py =====
+-rwx------ 1 root root 4063 May 11 23:36 /usr/local/sbin/twlv20-pg-b2.py
+#!/usr/bin/env python3
+import base64, hashlib, json, os, sys, time, urllib.request, urllib.error
+
+def req(url, method='GET', headers=None, data=None):
+    headers = headers or {}
+    body = None
+    if data is not None:
+        if isinstance(data, (dict, list)):
+            body = json.dumps(data).encode(); headers.setdefault('Content-Type','application/json')
+        elif isinstance(data, bytes): body = data
+        else: body = data.encode()
+    r = urllib.request.Request(url, data=body, headers=headers, method=method)
+    try:
+        with urllib.request.urlopen(r, timeout=120) as resp:
+            raw = resp.read()
+            return json.loads(raw.decode()) if raw else {}
+    except urllib.error.HTTPError as e:
+        raise SystemExit(f'B2 HTTP {e.code}: {e.read().decode(errors="replace")[:500]}')
+
+def auth():
+    key_id=<redacted>'B2_KEY_ID']; key=<redacted>'B2_APPLICATION_KEY']
+    token=<redacted>'{key_id}:{key}'.encode()).decode()
+    return req('https://api.backblazeb2.com/b2api/v2/b2_authorize_account', headers={'Authorization': 'Basic '+token})
+
+def bucket(a):
+    name=os.environ['B2_BUCKET_NAME']
+    h={'Authorization':a['authorizationToken']}
+    buckets=req(a['apiUrl']+'/b2api/v2/b2_list_buckets','POST',h,{'accountId':a['accountId'],'bucketName':name}).get('buckets',[])
+    if buckets: return buckets[0]
+    return req(a['apiUrl']+'/b2api/v2/b2_create_bucket','POST',h,{'accountId':a['accountId'],'bucketName':name,'bucketType':os.environ.get('B2_BUCKET_TYPE','allPrivate')})
+
+def upload(path, name):
+    a=auth(); b=bucket(a); h={'Authorization':a['authorizationToken']}
+    up=req(a['apiUrl']+'/b2api/v2/b2_get_upload_url','POST',h,{'bucketId':b['bucketId']})
+    data=open(path,'rb').read(); sha=hashlib.sha1(data).hexdigest()
+    uh={'Authorization':up['authorizationToken'],'X-Bz-File-Name':urllib.request.quote(name),'Content-Type':'application/octet-stream','X-Bz-Content-Sha1':sha}
+    out=req(up['uploadUrl'],'POST',uh,data)
+    print(json.dumps({'uploaded':out['fileName'],'fileId':out['fileId'],'size':out['contentLength']}))
+
+def list_files(prefix):
+    a=auth(); b=bucket(a); h={'Authorization':a['authorizationToken']}; files=[]; start=None
+    while True:
+        payload={'bucketId':b['bucketId'],'prefix':prefix,'maxFileCount':1000}
+        if start: payload['startFileName']=start
+        out=req(a['apiUrl']+'/b2api/v2/b2_list_file_names','POST',h,payload)
+        files += out.get('files',[])
+        start=out.get('nextFileName')
+        if not start: break
+    return a,b,files
+
+def retention(prefix, keep):
+    a,b,files=list_files(prefix)
+    files=sorted([f for f in files if f['fileName'].endswith('.sql.gz.gpg')], key=<redacted> f:(f.get('uploadTimestamp',0), f['fileName']), reverse=True)
+    h={'Authorization':a['authorizationToken']}
+    for f in files[keep:]:
+        req(a['apiUrl']+'/b2api/v2/b2_delete_file_version','POST',h,{'fileName':f['fileName'],'fileId':f['fileId']})
+        print(json.dumps({'deleted_old_backup':f['fileName']}))
+
+def latest(prefix):
+    a,b,files=list_files(prefix)
+    files=sorted([f for f in files if f['fileName'].endswith('.sql.gz.gpg')], key=<redacted> f:(f.get('uploadTimestamp',0), f['fileName']), reverse=True)
+    if not files: raise SystemExit('no backups found')
+    print(files[0]['fileName'])
+
+def download(name, dest):
+    a=auth(); h={'Authorization':a['authorizationToken']}
+    url=a['downloadUrl']+'/file/'+os.environ['B2_BUCKET_NAME']+'/'+urllib.request.quote(name)
+    r=urllib.request.Request(url, headers=h)
+    with urllib.request.urlopen(r, timeout=300) as resp, open(dest,'wb') as out: out.write(resp.read())
+    print(json.dumps({'downloaded':name,'dest':dest,'size':os.path.getsize(dest)}))
+
+if __name__=='__main__':
+    cmd=sys.argv[1]
+    if cmd=='upload': upload(sys.argv[2], sys.argv[3])
+    elif cmd=='retention': retention(sys.argv[2], int(sys.argv[3]))
+    elif cmd=='latest': latest(sys.argv[2])
+    elif cmd=='download': download(sys.argv[2], sys.argv[3])
+    else: raise SystemExit('usage: upload|retention|latest|download')
+===== /usr/local/sbin/twlv20-postgres-backup-alert =====
+-rwx------ 1 root root 611 May 11 23:36 /usr/local/sbin/twlv20-postgres-backup-alert
+#!/usr/bin/env bash
+set -euo pipefail
+TO="ai@twlv20.com"
+SUBJECT="Twlv20 Postgres backup failed on $(hostname -f 2>/dev/null || hostname)"
+BODY="Twlv20 weekly Postgres backup failed on $(hostname) at $(date -u --iso-8601=seconds). Check: journalctl -u twlv20-postgres-backup.service -n 200 --no-pager"
+if command -v mail >/dev/null 2>&1; then printf '%s\n' "$BODY" | mail -s "$SUBJECT" "$TO" && exit 0; fi
+if command -v sendmail >/dev/null 2>&1; then { printf 'To: %s\nSubject: %s\n\n%s\n' "$TO" "$SUBJECT" "$BODY"; } | sendmail -t && exit 0; fi
+logger -t twlv20-postgres-backup-alert "$SUBJECT - $BODY"
+exit 1

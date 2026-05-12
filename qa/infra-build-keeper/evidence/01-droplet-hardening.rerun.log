@@ -1,0 +1,37 @@
+PASS Ubuntu 24.04
+WARN vCPU < 8
+WARN RAM below expected
+PASS unattended-upgrades present
+WARN Could not confirm root SSH disabled; sudo may require password/TTY
+WARN Could not confirm password SSH disabled; sudo may require password/TTY
+Status: active
+Logging: on (low)
+Default: deny (incoming), allow (outgoing), deny (routed)
+New profiles: skip
+
+To                         Action      From
+--                         ------      ----
+80/tcp                     ALLOW IN    Anywhere                   # HTTP for Caddy
+443/tcp                    ALLOW IN    Anywhere                   # HTTPS for Caddy
+22/tcp                     ALLOW IN    Anywhere                  
+80/tcp (v6)                ALLOW IN    Anywhere (v6)              # HTTP for Caddy
+443/tcp (v6)               ALLOW IN    Anywhere (v6)              # HTTPS for Caddy
+22/tcp (v6)                ALLOW IN    Anywhere (v6)             
+
+PASS fail2ban active
+v2.11.2 h1:iOlpsSiSKqEW+SIXrcZsZ/NO74SzB/ycqqvAIEfIm64=
+{"level":"info","ts":1778607035.2840822,"msg":"using config from file","file":"/etc/caddy/Caddyfile"}
+{"level":"info","ts":1778607035.288282,"msg":"adapted config to JSON","adapter":"caddyfile"}
+Valid configuration
+{"level":"info","ts":1778607035.2902532,"logger":"tls.cache.maintenance","msg":"started background certificate maintenance","cache":"0xde1d0302200"}
+{"level":"info","ts":1778607035.2904186,"logger":"http.auto_https","msg":"server is listening only on the HTTPS port but has no TLS connection policies; adding one to enable TLS","server_name":"srv0","https_port":443}
+{"level":"info","ts":1778607035.290447,"logger":"http.auto_https","msg":"enabling automatic HTTP->HTTPS redirects","server_name":"srv0"}
+{"level":"warn","ts":1778607035.2904556,"logger":"http.auto_https","msg":"server is listening only on the HTTP port, so no automatic HTTPS will be applied to this server","server_name":"srv1","http_port":80}
+{"level":"info","ts":1778607035.2910218,"logger":"tls.cache.maintenance","msg":"stopped background certificate maintenance","cache":"0xde1d0302200"}
+{"level":"info","ts":1778607035.2910454,"logger":"http","msg":"servers shutting down with eternal grace period"}
+PASS Caddy active/config valid
+udp   UNCONN 0      0                  *:443              *:*          
+tcp   LISTEN 0      4096         0.0.0.0:22         0.0.0.0:*          
+tcp   LISTEN 0      4096               *:443              *:*          
+tcp   LISTEN 0      4096            [::]:22            [::]:*          
+tcp   LISTEN 0      4096               *:80               *:*          

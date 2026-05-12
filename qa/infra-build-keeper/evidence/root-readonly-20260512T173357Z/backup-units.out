@@ -1,0 +1,31 @@
+Wed 2026-05-13 00:00:00 UTC       6h Tue 2026-05-12 00:00:01 UTC            - dpkg-db-backup.timer           dpkg-db-backup.service
+Sun 2026-05-17 02:00:00 UTC   4 days Mon 2026-05-11 23:36:07 UTC            - twlv20-postgres-backup.timer   twlv20-postgres-backup.service
+# /etc/systemd/system/twlv20-postgres-backup.timer
+[Unit]
+Description=Run Twlv20 Postgres backup weekly
+
+[Timer]
+OnCalendar=Sun *-*-* 02:00:00 UTC
+Persistent=true
+RandomizedDelaySec=0
+Unit=twlv20-postgres-backup.service
+
+[Install]
+WantedBy=timers.target
+
+# /etc/systemd/system/twlv20-postgres-backup.service
+[Unit]
+Description=Twlv20 encrypted Postgres snapshot to Backblaze B2
+OnFailure=twlv20-postgres-backup-alert@%n.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/sbin/twlv20-postgres-backup
+
+# /etc/systemd/system/twlv20-postgres-backup-alert@.service
+[Unit]
+Description=Alert on Twlv20 Postgres backup failure for %i
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/sbin/twlv20-postgres-backup-alert

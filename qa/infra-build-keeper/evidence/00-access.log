@@ -1,0 +1,3 @@
+PASS SSH reaches keeper@162.243.252.92
+PASS hostname is twlv20-prod
+WARN Could not read effective sshd settings

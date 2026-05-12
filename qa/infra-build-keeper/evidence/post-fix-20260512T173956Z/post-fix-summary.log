@@ -1,0 +1,88 @@
+=== sshd effective ===
+logingracetime 20
+maxauthtries 3
+permitrootlogin no
+pubkeyauthentication yes
+passwordauthentication no
+kbdinteractiveauthentication no
+allowusers keeper
+allowusers jon
+allowusers twlv20-deploy
+=== ufw ===
+Status: active
+Logging: on (low)
+Default: deny (incoming), allow (outgoing), deny (routed)
+New profiles: skip
+
+To                         Action      From
+--                         ------      ----
+80/tcp                     ALLOW IN    Anywhere                   # HTTP for Caddy
+443/tcp                    ALLOW IN    Anywhere                   # HTTPS for Caddy
+22/tcp                     LIMIT IN    Anywhere                   # SSH rate-limited
+80/tcp (v6)                ALLOW IN    Anywhere (v6)              # HTTP for Caddy
+443/tcp (v6)               ALLOW IN    Anywhere (v6)              # HTTPS for Caddy
+22/tcp (v6)                LIMIT IN    Anywhere (v6)              # SSH rate-limited
+
+=== backup timer ===
+Sun 2026-05-17 03:00:00 UTC       4 days Mon 2026-05-11 23:36:07 UTC           - twlv20-postgres-backup.timer   twlv20-postgres-backup.service
+=== backup script lint ===
+PASS_bash_n
+=== backup script spec grep ===
+WORK="$(mktemp -d /var/backups/twlv20-postgres/run.XXXXXX)"
+LOG=/var/log/twlv20/postgres-backup.log
+DATABASES=(twlv20 infisical)
+    sudo -u postgres pg_dump --format=custom --no-owner --no-privileges --dbname="$DB" --file="$DUMP"
+    gpg --batch --yes --symmetric --cipher-algo AES256 --pinentry-mode loopback \
+    /usr/local/sbin/twlv20-pg-b2.py upload "$ENC" "$OBJ"
+  /usr/local/sbin/twlv20-pg-b2.py retention "$B2_OBJECT_PREFIX/" "$B2_RETENTION_COUNT"
+=== postgres rls linter ===
+PASS Postgres client 16
+PASS Postgres active
+PASS pgvector extension installed
+twlv20_app|f|f
+4
+public.approvals
+public.artifacts
+public.runs
+public.tenant_secrets_refs
+You are now connected to database "twlv20" as user "postgres".
+BEGIN
+SET
+              set_config              
+--------------------------------------
+ 608755a7-b95d-428f-a341-5f92b881fe5b
+(1 row)
+
+INSERT 0 1
+              set_config              
+--------------------------------------
+ 3acd05e3-3525-493a-8482-8ca241e289dc
+(1 row)
+
+INSERT 0 1
+              set_config              
+--------------------------------------
+ 608755a7-b95d-428f-a341-5f92b881fe5b
+(1 row)
+
+DO
+              set_config              
+--------------------------------------
+ 3acd05e3-3525-493a-8482-8ca241e289dc
+(1 row)
+
+DO
+ set_config 
+------------
+ 
+(1 row)
+
+DO
+RESET
+ROLLBACK
+          result           
+---------------------------
+ RLS isolation test passed
+(1 row)
+
+PASS RLS isolation test passed

@@ -1,0 +1,130 @@
+=== columns for relevant tables ===
+--- users
+id:uuid
+email:character varying
+authMethods:ARRAY
+superAdmin:boolean
+firstName:character varying
+lastName:character varying
+isAccepted:boolean
+isMfaEnabled:boolean
+mfaMethods:ARRAY
+devices:jsonb
+createdAt:timestamp with time zone
+updatedAt:timestamp with time zone
+isGhost:boolean
+username:character varying
+isEmailVerified:boolean
+consecutiveFailedMfaAttempts:integer
+isLocked:boolean
+temporaryLockDateEnd:timestamp with time zone
+consecutiveFailedPasswordAttempts:integer
+selectedMfaMethod:character varying
+hashedPassword:character varying
+isGoogleVerified:boolean
+isGitHubVerified:boolean
+isGitLabVerified:boolean
+lastSeenAnnouncementId:character varying
+--- organizations
+id:uuid
+name:character varying
+customerId:character varying
+slug:character varying
+createdAt:timestamp with time zone
+updatedAt:timestamp with time zone
+authEnforced:boolean
+scimEnabled:boolean
+kmsDefaultKeyId:uuid
+kmsEncryptedDataKey:bytea
+defaultMembershipRole:character varying
+enforceMfa:boolean
+selectedMfaMethod:character varying
+allowSecretSharingOutsideOrganization:boolean
+shouldUseNewPrivilegeSystem:boolean
+privilegeUpgradeInitiatedByUsername:character varying
+privilegeUpgradeInitiatedAt:timestamp with time zone
+bypassOrgAuthEnabled:boolean
+userTokenExpiration:character varying
+secretsProductEnabled:boolean
+pkiProductEnabled:boolean
+kmsProductEnabled:boolean
+sshProductEnabled:boolean
+scannerProductEnabled:boolean
+shareSecretsProductEnabled:boolean
+maxSharedSecretLifetime:integer
+maxSharedSecretViewLimit:integer
+googleSsoAuthEnforced:boolean
+googleSsoAuthLastUsed:timestamp with time zone
+parentOrgId:uuid
+rootOrgId:uuid
+blockDuplicateSecretSyncDestinations:boolean
+secretShareBrandConfig:jsonb
+--- projects
+id:character varying
+name:character varying
+slug:character varying
+autoCapitalization:boolean
+orgId:uuid
+createdAt:timestamp with time zone
+updatedAt:timestamp with time zone
+version:integer
+upgradeStatus:character varying
+pitVersionLimit:integer
+kmsCertificateKeyId:uuid
+auditLogsRetentionDays:integer
+kmsSecretManagerKeyId:uuid
+kmsSecretManagerEncryptedDataKey:bytea
+description:character varying
+type:character varying
+enforceCapitalization:boolean
+hasDeleteProtection:boolean
+secretSharing:boolean
+showSnapshotsLegacy:boolean
+defaultProduct:character varying
+secretDetectionIgnoreValues:ARRAY
+enforceEncryptedSecretManagerSecretMetadata:boolean
+--- identities
+id:uuid
+name:character varying
+authMethod:character varying
+createdAt:timestamp with time zone
+updatedAt:timestamp with time zone
+hasDeleteProtection:boolean
+orgId:uuid
+projectId:character varying
+--- identity_universal_auths
+id:uuid
+clientId:character varying
+accessTokenTTL:bigint
+accessTokenMaxTTL:bigint
+accessTokenNumUsesLimit:bigint
+clientSecretTrustedIps:jsonb
+accessTokenTrustedIps:jsonb
+createdAt:timestamp with time zone
+updatedAt:timestamp with time zone
+identityId:uuid
+accessTokenPeriod:bigint
+lockoutEnabled:boolean
+lockoutThreshold:integer
+lockoutDurationSeconds:integer
+lockoutCounterResetSeconds:integer
+--- project_environments
+id:uuid
+name:character varying
+slug:character varying
+position:integer
+projectId:character varying
+createdAt:timestamp with time zone
+updatedAt:timestamp with time zone
+--- project_template_identity_memberships
+id:uuid
+projectTemplateId:uuid
+identityId:uuid
+roles:ARRAY
+createdAt:timestamp with time zone
+updatedAt:timestamp with time zone
+--- project_memberships
+--- identity_project_additional_privilege
+--- identity_project_memberships
+=== exact membership-ish tables ===
+project_template_identity_memberships

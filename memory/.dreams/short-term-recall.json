@@ -1,0 +1,164 @@
+{
+  "version": 1,
+  "updatedAt": "2026-05-12T20:14:01.616Z",
+  "entries": {
+    "memory:memory/2026-05-05.md:1:8": {
+      "key": "memory:memory/2026-05-05.md:1:8",
+      "path": "memory/2026-05-05.md",
+      "startLine": 1,
+      "endLine": 8,
+      "source": "memory",
+      "snippet": "# 2026-05-05 - GitHub CLI was installed locally at `.local/bin/gh` because elevated apt install was unavailable from webchat. - Authenticated GitHub CLI as `Twlv20-AI` with HTTPS protocol. Token scopes shown by gh: `repo`, `workflow`, `read:org`, `gist`. - Jessie asked to read `https://github.com/Twlv20-AI/twlv20-ai-skills`, extract identity/purpose, and reconstruct the workspace for reliability. - The repo contained two Word documents: `Copy of Twlv20_AI_OS___Architecture_One-Pager_v1.md.docx` and `Infra Build Steps for Phase 2.docx`. - Extracted readable text copies into `sources/` and distilled durable workspace files: `IDENTITY.md`, `USER.md`, `PURPOSE.md`, `MEMORY.md`, and updated `AGE",
+      "recallCount": 2,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.7225673347711563,
+      "maxScore": 0.3650746524333954,
+      "firstRecalledAt": "2026-05-11T23:44:59.394Z",
+      "lastRecalledAt": "2026-05-12T00:06:45.723Z",
+      "queryHashes": [
+        "080181dfc091",
+        "99108850061e"
+      ],
+      "recallDays": [
+        "2026-05-11",
+        "2026-05-12"
+      ],
+      "conceptTags": [
+        "local/bin/gh",
+        "twlv20-ai",
+        "identity/purpose",
+        "twlv20-ai-os",
+        "2.docx",
+        "identity.md",
+        "user.md",
+        "purpose.md"
+      ]
+    },
+    "memory:memory/2026-05-12.md:92:105": {
+      "key": "memory:memory/2026-05-12.md:92:105",
+      "path": "memory/2026-05-12.md",
+      "startLine": 92,
+      "endLine": 105,
+      "source": "memory",
+      "snippet": "- Still recommended: rotate any old exposed root/droplet/password-manager credentials and rotate B2 all-buckets key to bucket-scoped key. Important operating preferences from Jessie: - After tasks, always show/give a link where the update lives. - Do not echo secrets in chat. Confirm paths only. - For public/client/production changes, keep HITL and provide proof. Known remaining items after latest user work: - Infisical admin signup and project/machine identity setup still likely pending. - Offline backup of Infisical `/etc/infisical/.env` / `ENCRYPTION_KEY` still needs human custody. - Real secret migration into Infisical pending. - B2 key rotation to bucket-scoped key pending. - Merge",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.4045857787132263,
+      "maxScore": 0.4045857787132263,
+      "firstRecalledAt": "2026-05-12T02:23:20.389Z",
+      "lastRecalledAt": "2026-05-12T02:23:20.389Z",
+      "queryHashes": [
+        "653609bf91c7"
+      ],
+      "recallDays": [
+        "2026-05-12"
+      ],
+      "conceptTags": [
+        "backup",
+        "root/droplet/password-manager",
+        "all-buckets",
+        "bucket-scoped",
+        "show/give",
+        "public/client/production",
+        "project/machine",
+        "etc/infisical"
+      ]
+    },
+    "memory:memory/2026-05-12.md:32:55": {
+      "key": "memory:memory/2026-05-12.md:32:55",
+      "path": "memory/2026-05-12.md",
+      "startLine": 32,
+      "endLine": 55,
+      "source": "memory",
+      "snippet": "- Documentation update PR created due to protection: `https://github.com/Twlv20-AI/twlv20-ai-skills/pull/1`; checks passed. It may still need review/merge. - ClickUp updated: `https://app.clickup.com/t/86b9m4z8h`. 3. **Task #5 — Infisical self-hosted install + per-tenant scoping** (`86b9m4z6q`) - Installed local Infisical foundation on `twlv20-prod`: - Docker + Compose v2 installed. - Redis installed, localhost-only, password protected. - Postgres DB `infisical`, role `infisical_app`. - Root-only env: `/etc/infisical/.env`. - Compose: `/opt/infisical/docker-compose.yml`. - Container: `infisical-backend`. - Health verified locally: `/api/status` `Ok`",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.3539886802434921,
+      "maxScore": 0.3539886802434921,
+      "firstRecalledAt": "2026-05-12T02:23:20.389Z",
+      "lastRecalledAt": "2026-05-12T02:23:20.389Z",
+      "queryHashes": [
+        "653609bf91c7"
+      ],
+      "recallDays": [
+        "2026-05-12"
+      ],
+      "conceptTags": [
+        "review/merge",
+        "app.clickup.com/t/86b9m4z8h",
+        "self-hosted",
+        "per-tenant",
+        "twlv20-prod",
+        "localhost-only",
+        "infisical-app",
+        "root-only"
+      ]
+    },
+    "memory:memory/2026-05-12.md:1:15": {
+      "key": "memory:memory/2026-05-12.md:1:15",
+      "path": "memory/2026-05-12.md",
+      "startLine": 1,
+      "endLine": 15,
+      "source": "memory",
+      "snippet": "## Infisical admin password decision — 2026-05-12 03:11 UTC Jessie decided it is okay not to rotate the Infisical admin password right now, despite earlier recommendation. Treat as accepted short-term risk. Before storing live/high-value client secrets, remind Jessie that rotation is still recommended because the initial password was pasted in chat and reused elsewhere. ## Remaining infra items — 2026-05-12 08:33 UTC Open work now centers on: - SMTP for Infisical (likely Mailgun) - Migrating real secrets into Infisical - Rotating the Backblaze B2 app key to bucket-scoped access for `twlv20-postgres-backups` - Checking PR #1 The `ajiri` → `AgereSciences` rename is complete and rescanned",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.3867629826068878,
+      "maxScore": 0.3867629826068878,
+      "firstRecalledAt": "2026-05-12T08:36:11.477Z",
+      "lastRecalledAt": "2026-05-12T08:36:11.477Z",
+      "queryHashes": [
+        "bb131333fcbc"
+      ],
+      "recallDays": [
+        "2026-05-12"
+      ],
+      "conceptTags": [
+        "backup",
+        "backups",
+        "short-term",
+        "live/high-value",
+        "bucket-scoped",
+        "twlv20-postgres-backups",
+        "infisical",
+        "admin"
+      ]
+    },
+    "memory:memory/2026-05-12.md:26:35": {
+      "key": "memory:memory/2026-05-12.md:26:35",
+      "path": "memory/2026-05-12.md",
+      "startLine": 26,
+      "endLine": 35,
+      "source": "memory",
+      "snippet": "3. launch internal dashboard MVP (overview, tenant switcher, run log, approvals, call log) 4. wire dashboard approvals/actions into workflows with audit trail 5. add realtime voice / polish later Detailed implementation plan stored in `plans/post-phase2-voice-dashboard-v1.md`. ## ClickUp Phase 3 add attempt — 2026-05-12 19:51 UTC Jessie asked to add the Phase 3 voice/dashboard plan into ClickUp. A local ClickUp task draft was prepared at `plans/clickup-phase3-task-draft.md`, but the current ClickUp API token in `.env.clickup` returned HTTP 401 Unauthorized, so the task could not be created from the droplet at this time.",
+      "recallCount": 2,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.7589925467967986,
+      "maxScore": 0.3949956268072128,
+      "firstRecalledAt": "2026-05-12T20:12:16.617Z",
+      "lastRecalledAt": "2026-05-12T20:14:01.616Z",
+      "queryHashes": [
+        "88dc8a987b2f",
+        "84b8167967b6"
+      ],
+      "recallDays": [
+        "2026-05-12"
+      ],
+      "conceptTags": [
+        "approvals/actions",
+        "voice/dashboard",
+        "env.clickup",
+        "launch",
+        "internal",
+        "dashboard",
+        "mvp",
+        "overview"
+      ]
+    }
+  }
+}

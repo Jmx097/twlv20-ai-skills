@@ -18,7 +18,7 @@ CREATE TABLE IF NOT EXISTS tenants (
 
 INSERT INTO tenants (slug, name) VALUES
   ('pure-peptide', 'Pure Peptide Solutions'),
-  ('ajiri', 'Ajiri Sciences'),
+  ('agere-sciences', 'AgereSciences'),
   ('sru', 'Sales Recruiting University'),
   ('twlv20-internal', 'Twlv20 Internal')
 ON CONFLICT (slug) DO UPDATE SET

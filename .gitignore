@@ -1,10 +1,23 @@
-node_modules/
-dist/
+# Local binaries / downloaded tools
+.local/
+
+# OpenClaw runtime state
+.openclaw/
+
+# Secrets and env
 .env
 .env.*
-!.env.example
-*.log
-.DS_Store
-coverage/
 *.pem
 *.key
+!*.example
+
+# OS/editor noise
+.DS_Store
+*.swp
+
+# Python/cache noise
+__pycache__/
+*.pyc
+
+# Local ClickUp credentials
+.env.clickup

@@ -13,7 +13,7 @@ Tenant-scoped tables carry `tenant_id`, have RLS enabled, and force RLS. Policie
 
 Seed tenants:
 - Pure Peptide Solutions: `pure-peptide`
-- Ajiri Sciences: `ajiri`
+- AgereSciences: `agere-sciences`
 - Sales Recruiting University: `sru`
 - Twlv20 Internal: `twlv20-internal`
 

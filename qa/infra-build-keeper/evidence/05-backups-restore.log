@@ -1,0 +1,23 @@
+Wed 2026-05-13 00:00:00 UTC       6h Tue 2026-05-12 00:00:01 UTC            - dpkg-db-backup.timer           dpkg-db-backup.service
+Sun 2026-05-17 02:00:00 UTC   4 days Mon 2026-05-11 23:36:07 UTC            - twlv20-postgres-backup.timer   twlv20-postgres-backup.service
+PASS backup schedule found
+/usr/bin/pg_dump
+/usr/bin/gpg
+FAIL required backup tooling missing
+PASS custom-format pg_dump referenced
+/opt/twlv20-ai-skills/runtime/node_modules/@types/node/tls.d.ts:         * For example, a TLSv1.2 protocol with AES256-SHA cipher:
+/opt/twlv20-ai-skills/runtime/node_modules/@types/node/tls.d.ts:         *     "name": "AES256-SHA",
+PASS AES256 encryption referenced
+WARN rclone remote not confirmed
+/etc/services:amanda		10080/tcp			# amanda backup services
+/etc/services:kamanda		10081/tcp			# amanda backup services (Kerberos)
+/etc/services:amandaidx	10082/tcp			# amanda backup services
+/etc/services:amidxtape	10083/tcp			# amanda backup services
+/etc/lvm/lvm.conf:	# warning is repeated when 85%, 90% and 95% of the snapshot is filled.
+/etc/mtab:overlay /var/lib/docker/rootfs/overlayfs/adbd5675d188e43b9da74cb1c8f448c20b3bb4d57423318029e48753ac75413b overlay rw,relatime,lowerdir=/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/27/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/18/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/17/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/16/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/15/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/14/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/13/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/12/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/11/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/10/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/9/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/8/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/7/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/6/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/5/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/4/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/3/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/2/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/1/fs,upperdir=/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/28/fs,workdir=/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/28/work,nouserxattr 0 0
+/opt/twlv20-ai-skills/docs/audits/final-verification-2026-05-12.md:- `86b9m4z7r` — Weekly encrypted Postgres snapshots → Backblaze B2 — `for qa`.
+/opt/twlv20-ai-skills/docs/RUNBOOKS/postgres-backups.md:## B2 layout and retention
+/opt/twlv20-ai-skills/docs/RUNBOOKS/postgres-backups.md:- Retention: backup script keeps the newest 8 `.sql.gz.gpg` weekly objects and deletes older objects under the prefix.
+/opt/twlv20-ai-skills/runtime/node_modules/@types/node/worker_threads.d.ts:         * Returns a readable stream for a V8 snapshot of the current state of the Worker.
+PASS retention logic visible
+WARN Manual check required: restore drill evidence on scratch host, failure email/alert delivery evidence, non-secret GPG passphrase custody

@@ -69,7 +69,7 @@ After the first admin account exists, create projects:
 
 - Global
 - Pure Peptide Solutions
-- Ajiri Sciences
+- AgereSciences
 - Sales Recruiting University
 - Twlv20 Internal
 
