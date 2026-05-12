@@ -120,3 +120,9 @@ Known blockers:
 5. Migrate real secrets only after the key backup and project/identity checks.
 6. Rotate/clean up exposed legacy credentials now that root SSH is disabled.
 7. Resolve GitHub branch protection limitation via GitHub plan upgrade or policy decision.
+
+## Credential cleanup update — 2026-05-12
+
+The original source Word documents were removed from the GitHub repo after hardening because they may contain obsolete access handoff material. Current access instructions are maintained in the runbooks and ClickUp without secrets.
+
+ClickUp `Droplet Access` was sanitized to remove exposed credential material and now only documents key-only access.
